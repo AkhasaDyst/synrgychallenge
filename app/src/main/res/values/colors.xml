@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Day Theme Colors -->
+    <color name="day_primary">#FF4CC8C8</color> <!-- Slightly darker cyan -->
+    <color name="day_secondary">#FFBEFFFF</color> <!-- Slightly darker cyan -->
+    <color name="day_background">#F0FBFB</color> <!-- Dark cyan background -->
+    <color name="day_text">#FF000000</color> <!-- Black text color -->
+
+    <!-- Night Theme Colors -->
+    <color name="night_primary">#FFBEFFFF</color> <!-- Slightly darker cyan -->
+    <color name="night_secondary">#00A6A6</color> <!-- Slightly darker cyan -->
+    <color name="night_background">#445351</color> <!-- Dark cyan background -->
+    <color name="night_text">#FFFFFFFF</color> <!-- White text color -->
+
+    <!-- Common Colors -->
+    <color name="common_cyan">#00FFFF</color> <!-- Cyan color for both day and night themes -->
+</resources>
