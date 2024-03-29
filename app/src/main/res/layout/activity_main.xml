@@ -126,13 +126,20 @@
             android:id="@+id/img"
             app:layout_constraintStart_toStartOf="@id/switchround"
             app:layout_constraintEnd_toEndOf="@id/switchround"
-            app:layout_constraintTop_toBottomOf="@id/tvamount">
+            app:layout_constraintTop_toBottomOf="@id/tvamount"
+            >
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_send_foreground"
-                android:background="?attr/colorPrimaryVariant"
                 android:elevation="10dp"/>
+            <ImageButton
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="?attr/image"
+                tools:src="?attr/image"
+                android:scaleType="center"
+                android:adjustViewBounds="true"/>
         </androidx.cardview.widget.CardView>
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/switchtheme"

@@ -7,5 +7,6 @@
         <item name="colorPrimaryVariant">@color/night_secondary</item>
         <item name="android:colorBackground">@color/night_background</item>
         <item name="android:textColor">@color/night_text</item>
+        <item name="image">@drawable/night</item>
     </style>
 </resources>

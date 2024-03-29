@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TIP TIME</string>
     <string name="COS">Harga Pelayanan</string>
-    <string name="HOWTS">Bagaimana denagn pelayanan kami?</string>
+    <string name="HOWTS">Bagaimana dengan pelayanan kami?</string>
     <string name="amazing">Keren   ( 20% )</string>
     <string name="good">Bagus      ( 18% )</string>
     <string name="ok">OK           ( 15% )</string>

@@ -7,7 +7,7 @@
         <item name="colorPrimaryVariant">@color/day_secondary</item>
         <item name="android:colorBackground">@color/day_background</item>
         <item name="android:textColor">@color/day_text</item>
+        <item name="image">@drawable/day</item>
     </style>
-
     <style name="Theme.Synrgychall2" parent="Base.Theme.Synrgychall2" />
 </resources>
