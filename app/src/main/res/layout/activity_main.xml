@@ -34,6 +34,7 @@
         app:layout_constraintTop_toBottomOf="@id/heading">
 
         <EditText
+            android:id="@+id/etform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="300dp"
@@ -54,8 +55,8 @@
         app:layout_constraintStart_toStartOf="@id/cardCoS"
         app:layout_constraintTop_toBottomOf="@id/cardCoS"/>
 
-    <LinearLayout
-        android:id="@+id/linearradio"
+    <RadioGroup
+        android:id="@+id/radio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +85,7 @@
             android:fontFamily="@font/roboto_medium"
             android:text="@string/ok"
             />
-    </LinearLayout>
+    </RadioGroup>
 
 
 
@@ -95,8 +96,8 @@
         app:switchPadding="170dp"
         android:text="@string/roundup"
         android:fontFamily="@font/roboto_thin"
-        app:layout_constraintStart_toStartOf="@id/linearradio"
-        app:layout_constraintTop_toBottomOf="@id/linearradio" />
+        app:layout_constraintStart_toStartOf="@id/radio"
+        app:layout_constraintTop_toBottomOf="@id/radio" />
 
     <Button
         android:layout_width="wrap_content"
@@ -109,6 +110,17 @@
         app:layout_constraintEnd_toEndOf="@id/switchround"
         app:layout_constraintStart_toStartOf="@id/switchround"
         app:layout_constraintTop_toBottomOf="@id/switchround" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_black"
+        android:id="@+id/btncalfrag"
+        android:text="@string/calculatefrag"
+        android:paddingStart="115dp"
+        android:paddingEnd="115dp"
+        app:layout_constraintEnd_toEndOf="@id/switchtheme"
+        app:layout_constraintStart_toStartOf="@id/switchtheme"
+        app:layout_constraintTop_toBottomOf="@id/switchtheme" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
