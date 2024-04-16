@@ -7,7 +7,7 @@ List of task accomplished on Android Synrgy 7 Challenge 2
 ## Yudhi Winantoro
 <p>
   <a href="https://github.com/AkhasaDyst">
-    <img src="https://avatars.githubusercontent.com/u/111234514?v=4"  ="250" ="400"/>
+    <img src="https://avatars.githubusercontent.com/u/111234514?v=4"="250"="250"/>
   </a>
 </p>
 
