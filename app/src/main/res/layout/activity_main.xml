@@ -5,7 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <FrameLayout
+        android:id="@+id/fragframe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="20dp"
+        />
     <TextView
         android:id="@+id/heading"
         android:layout_width="wrap_content"
@@ -130,37 +135,42 @@
         app:layout_constraintEnd_toEndOf="@id/btncal"
         app:layout_constraintTop_toBottomOf="@id/btncal"/>
 
-        <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="50dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/img"
+        app:layout_constraintStart_toStartOf="@id/switchround"
+        app:layout_constraintEnd_toEndOf="@id/switchround"
+        app:layout_constraintTop_toBottomOf="@id/tvamount"
+        >
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="50dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/img"
-            app:layout_constraintStart_toStartOf="@id/switchround"
-            app:layout_constraintEnd_toEndOf="@id/switchround"
-            app:layout_constraintTop_toBottomOf="@id/tvamount"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_send_foreground"
-                android:elevation="10dp"/>
-            <ImageButton
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:src="?attr/image"
-                tools:src="?attr/image"
-                android:scaleType="center"
-                android:adjustViewBounds="true"/>
-        </androidx.cardview.widget.CardView>
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/switchtheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:switchPadding="170dp"
-            android:text="@string/nighttheme"
-            android:fontFamily="@font/roboto_thin"
-            app:layout_constraintStart_toStartOf="@id/switchround"
-            app:layout_constraintEnd_toEndOf="@id/switchround"
-            app:layout_constraintTop_toBottomOf="@id/img" />
+            android:src="@drawable/ic_send_foreground"
+            android:elevation="10dp"/>
+        <ImageButton
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="?attr/image"
+            tools:src="?attr/image"
+            android:scaleType="center"
+            android:adjustViewBounds="true"/>
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchtheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:switchPadding="170dp"
+        android:text="@string/nighttheme"
+        android:fontFamily="@font/roboto_thin"
+        app:layout_constraintStart_toStartOf="@id/switchround"
+        app:layout_constraintEnd_toEndOf="@id/switchround"
+        app:layout_constraintTop_toBottomOf="@id/img" />
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

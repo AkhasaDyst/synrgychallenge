@@ -5,6 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/day_primary</item>
         <item name="colorPrimaryVariant">@color/day_secondary</item>
+        <item name="colorOnBackground">@color/day_background</item>
         <item name="android:colorBackground">@color/day_background</item>
         <item name="android:textColor">@color/day_text</item>
         <item name="image">@drawable/day</item>

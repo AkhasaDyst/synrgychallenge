@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TotalFragment">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorOnBackground">
 
+    </FrameLayout>
     <TextView
-        android:id="@+id/tvtotalfrag"
+        android:id="@+id/tvtotal"
         android:layout_marginTop="150dp"
-        android:layout_marginLeft="200dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="total"/>
+        android:text="total"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
     <Button
-        android:id="@+id/btnkirimfrag"
+        android:id="@+id/btnkirim"
         android:layout_marginTop="250dp"
-        android:layout_marginLeft="165dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kirim"/>
+        android:text="Kirim"
+        app:layout_constraintTop_toBottomOf="@id/tvtotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

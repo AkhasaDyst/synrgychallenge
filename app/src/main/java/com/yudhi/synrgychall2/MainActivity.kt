@@ -4,11 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatDelegate
-import com.google.android.material.switchmaterial.SwitchMaterial
 import com.yudhi.synrgychall2.databinding.ActivityMainBinding
 
 
@@ -20,23 +17,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         Log.d("lifecycle", "onCreate")
-        setContentView(R.layout.activity_main)
-        val switch: SwitchMaterial = findViewById(R.id.switchtheme)
 
         // Check the current theme mode and update the switch accordingly
-        switch.isChecked = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        binding.switchtheme.isChecked = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
 
         // Attach a listener to the switch to toggle theme mode
-        switch.setOnCheckedChangeListener { _, isChecked ->
+        binding.switchtheme.setOnCheckedChangeListener { _, isChecked ->
             setThemeMode(isChecked)
         }
-        val radiogroup = findViewById<RadioGroup>(R.id.radio)
 
-        radiogroup.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
+        binding.radio.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
             override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
                 tip = when (checkedId) {
                     R.id.radiotip -> 0.2
@@ -47,10 +41,9 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        val btnMoveActivity: Button = findViewById(R.id.btncal)
-        btnMoveActivity.setOnClickListener{
-            val editText = findViewById<EditText>(R.id.etform)
-            harga = Integer.parseInt(editText.getText().toString())
+
+        binding.btncal.setOnClickListener{
+            harga = Integer.parseInt(binding.etform.getText().toString())
 
             sum = harga.toDouble() + (harga.toDouble() * tip)
             totalharga = sum.toInt()
@@ -66,7 +59,25 @@ class MainActivity : AppCompatActivity() {
         }
 
         // FRAGMENT
-        changeFragment(fragment, simple)
+        binding.btncalfrag.setOnClickListener {
+            val fragment = supportFragmentManager
+            val fragmentTransaction = fragment.beginTransaction()
+            val fragmentTotal = TotalFragment()
+
+            harga = Integer.parseInt(binding.etform.getText().toString())
+
+            sum = harga.toDouble() + (harga.toDouble() * tip)
+            totalharga = sum.toInt()
+
+            val bundle = Bundle()
+            bundle.putInt("BUNDLE_HARGA", harga)
+            bundle.putDouble("BUNDLE_TIP", tip)
+            bundle.putInt("BUNDLE_TOTAL", totalharga)
+
+            fragmentTotal.arguments = bundle
+            fragmentTransaction.replace(R.id.fragframe, fragmentTotal)
+            fragmentTransaction.commit()
+        }
     }
 
     override fun onStart() {
