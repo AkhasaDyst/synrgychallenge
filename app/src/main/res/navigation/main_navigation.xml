@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragment12">
+    <fragment
+        android:id="@+id/fragment12"
+        android:name="com.yudhi.synrgychall3.Fragment1"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_1" >
+        <action
+            android:id="@+id/action_fragment12_to_fragment23"
+            app:destination="@id/fragment23" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment23"
+        android:name="com.yudhi.synrgychall3.Fragment2"
+        android:label="fragment_2"
+        tools:layout="@layout/fragment_2" >
+        <action
+            android:id="@+id/action_fragment23_to_fragment32"
+            app:destination="@id/fragment32" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment32"
+        android:name="com.yudhi.synrgychall3.Fragment3"
+        android:label="fragment_3"
+        tools:layout="@layout/fragment_3" >
+        <argument
+            android:name="nama"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="nama" />
+    </fragment>
+</navigation>
