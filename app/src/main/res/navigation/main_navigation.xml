@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/hurufFragment">
+
+    <fragment
+        android:id="@+id/hurufFragment"
+        android:name="com.yudhi.synrgyrecchall3.HurufFragment"
+        android:label="fragment_huruf"
+        tools:layout="@layout/fragment_huruf" >
+        <action
+            android:id="@+id/action_hurufFragment_to_kataFragment"
+            app:destination="@id/kataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kataFragment"
+        android:name="com.yudhi.synrgyrecchall3.KataFragment"
+        android:label="fragment_kata"
+        tools:layout="@layout/fragment_kata" />
+</navigation>
