@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.yudhi.notetakingapp.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.yudhi.notetakingapp.view.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.yudhi.notetakingapp.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_deleteNoteFragment"
+            app:destination="@id/deleteNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_editNoteFragment"
+            app:destination="@id/editNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.yudhi.notetakingapp.view.AddNoteFragment"
+        android:label="fragment_add_note"
+        tools:layout="@layout/fragment_add_note" />
+    <fragment
+        android:id="@+id/deleteNoteFragment"
+        android:name="com.yudhi.notetakingapp.view.DeleteNoteFragment"
+        android:label="fragment_delete_note"
+        tools:layout="@layout/fragment_delete_note" />
+    <fragment
+        android:id="@+id/editNoteFragment"
+        android:name="com.yudhi.notetakingapp.view.EditNoteFragment"
+        android:label="fragment_edit_note"
+        tools:layout="@layout/fragment_edit_note" />
+</navigation>
