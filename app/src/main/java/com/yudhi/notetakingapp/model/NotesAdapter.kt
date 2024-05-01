@@ -7,16 +7,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.yudhi.notetakingapp.R
 
-class NotesAdapter (private val notesList: List<notes>, private val listener: (notes) -> Unit)
+class NotesAdapter (private val notesList: List<notes>)
     : RecyclerView.Adapter<NotesAdapter.ViewHolder>(){
-    class ViewHolder (itemView: View, private val listener: (notes) -> Unit) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
         val judulNotes: TextView = itemView.findViewById(R.id.tv_judul)
         val ringkasanNotes: TextView = itemView.findViewById(R.id.tv_ringkasan)
+        fun bind(notes: notes) {
+            judulNotes.text = notes.noteTitle
+            ringkasanNotes.text = notes.noteContent
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_note, parent, false)
-        return ViewHolder(view, listener)
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
@@ -24,8 +28,6 @@ class NotesAdapter (private val notesList: List<notes>, private val listener: (n
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val notes = notesList[position]
-        holder.judulNotes.text = notes.noteTitle
-        holder.ringkasanNotes.text = notes.noteContent
+        holder.bind(notesList[position])
     }
 }

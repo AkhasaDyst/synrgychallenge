@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.room")
 }
 
 android {
@@ -15,7 +16,20 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments["room.schemaLocation"] =
+                    "$projectDir/schemas"
+            }
+        }
+
+
     }
+
 
     buildTypes {
         release {
@@ -36,6 +50,13 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
+
+
+
+
 }
 
 dependencies {
@@ -50,4 +71,27 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.recyclerview:recyclerview:1.2.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+
+    // optional - RxJava2 support for Room
+    implementation("androidx.room:room-rxjava2:$room_version")
+
+    // optional - RxJava3 support for Room
+    implementation("androidx.room:room-rxjava3:$room_version")
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation("androidx.room:room-guava:$room_version")
+
+    // optional - Test helpers
+    testImplementation("androidx.room:room-testing:$room_version")
+
+    // optional - Paging 3 Integration
+    implementation("androidx.room:room-paging:$room_version")
+
 }
