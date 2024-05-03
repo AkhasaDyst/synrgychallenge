@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.room")
+    id("org.jetbrains.kotlin.kapt")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -53,10 +55,19 @@ android {
     room {
         schemaDirectory("$projectDir/schemas")
     }
-
-
-
-
+    kapt {
+        correctErrorTypes = true
+        useBuildCache = true
+    }
+}
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        val nav_version = "2.5.0"
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
+    }
 }
 
 dependencies {
@@ -72,6 +83,9 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.recyclerview:recyclerview:1.2.0")
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+    implementation ("androidx.fragment:fragment:1.3.0")
+    implementation ("androidx.fragment:fragment-ktx:1.3.0")
+
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
@@ -93,5 +107,9 @@ dependencies {
 
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:$room_version")
+    // To use Kotlin annotation processing tool (kapt)
+    kapt ("androidx.room:room-compiler:$room_version")
+
+
 
 }

@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:id="@+id/tv_login"
+        android:id="@+id/tv_register"
         android:text="Register"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -22,69 +22,95 @@
         android:layout_marginTop="40dp"
         android:id="@+id/card_logo"
         app:cardCornerRadius="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_login"
+        app:layout_constraintTop_toBottomOf="@id/tv_register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <ImageView
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:id="@+id/iv_logo"
-            android:background="@color/grey"
+            android:background="@mipmap/synrgy"
             />
     </androidx.cardview.widget.CardView>
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_username"
-        android:layout_marginTop="30dp"
-        android:hint="   Masukan Username"
-        android:background="@color/grey"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:hint="   Username"
         app:layout_constraintTop_toBottomOf="@id/card_logo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="30dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:id="@+id/et_email"
         android:layout_marginTop="10dp"
-        android:hint="   Masukan Email"
-        android:background="@color/grey"
+        android:hint="   Email"
         app:layout_constraintTop_toBottomOf="@id/et_username"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="30dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:id="@+id/et_password"
         android:layout_marginTop="10dp"
-        android:hint="   Masukan Password"
-        android:background="@color/grey"
+        android:hint="   Password"
         app:layout_constraintTop_toBottomOf="@id/et_email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="password_toggle">>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:paddingStart="30dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:id="@+id/et_password_2"
         android:layout_marginTop="10dp"
         android:hint="   Masukan Konfirmasi Password"
-        android:background="@color/grey"
         app:layout_constraintTop_toBottomOf="@id/et_password"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/pass_eye"
-        android:layout_marginRight="10dp"
-        app:layout_constraintTop_toTopOf="@id/et_password_2"
-        app:layout_constraintEnd_toEndOf="@id/et_password_2"
-        app:layout_constraintBottom_toBottomOf="@id/et_password_2"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="password_toggle">>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:paddingStart="30dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:text="Register"
         android:layout_marginTop="100dp"
         app:layout_constraintTop_toBottomOf="@id/et_password_2"
@@ -96,7 +122,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_akun"
         android:text="Sudah Punya Akun?"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        app:layout_constraintTop_toBottomOf="@id/btn_register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
